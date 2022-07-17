@@ -1,0 +1,197 @@
+:root
+{
+    --grid-columns: 7;
+    --grid-rows: 6;
+    --grid-aspect: var(--grid-columns) / var(--grid-rows);
+
+    --footer-height: 60px;
+    --header-height: 140px;
+    --sidebar-width: clamp(100px, 25%, 600px);
+
+    --palette-accent0: #804;
+    --palette-accent1: #d07;
+    --palette-accent2: #f08;
+    --palette-accent3: #e48;
+    --palette-base0: #232629;
+    --palette-base1: #2d3136;
+    --palette-base2: #31363b;
+    --palette-base3: #4d5057;
+    --palette-base4: #616569;
+    --palette-base5: #eff0f1;
+    --palette-secondary0: #345e75;
+    --palette-secondary1: #3daee9;
+
+    --grid-background: #1143c4;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    color: var(--palette-base5);
+    font-family: "Fira Sans", sans-serif;
+    font-size: 16pt;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+@font-face
+{
+    font-family: "MANIFESTO";
+    src: url("./assets/MANIFESTO.ttf");
+    /* Licence: ./assets/OFL.txt */
+}
+
+#title{
+    margin: 0;
+    position: relative;
+    text-align: center;
+    font-family: "MANIFESTO"
+}
+
+header a{
+    margin: 0;
+    position: absolute;
+    font-family: "MANIFESTO";
+    font-size: 20px;
+    color: white;
+    right: 1em;
+}
+    
+header
+{
+    background: var(--palette-secondary0);
+    font-size: 28pt;
+    font-weight: bold;
+    height: var(--header-height);
+    padding-top: 30px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+aside
+{
+    background: var(--palette-base1);
+    height: calc(100% - var(--header-height) - var(--footer-height));
+    /* max-width: var(--sidebar-max-width); */
+    position: absolute;
+    top: var(--header-height);
+    width: var(--sidebar-width);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    padding: 1.5%;
+}
+
+main
+{
+    background: var(--palette-base2);
+    height: calc(100% - var(--header-height) - var(--footer-height));
+    left: var(--sidebar-width);
+    position: absolute;
+    top: var(--header-height);
+    width: calc(100% - var(--sidebar-width));
+    background-image: url("assets/gridBg.png");
+}
+
+footer
+{
+    background: var(--palette-secondary0);
+    bottom: 0px;
+    height: var(--footer-height);
+    padding: 0.5em;
+    position: absolute;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.grid
+{
+    aspect-ratio: var(--grid-aspect);
+    margin: 10;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    padding-top: 10px;
+    position: relative;
+    max-height: 98%;
+    max-width: 98%;
+}
+
+.row
+{
+    height: calc(100% / var(--grid-rows));
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.cell
+{
+    background-size: cover;
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: calc(100% / var(--grid-columns));
+}
+
+.cell.empty
+{
+    background-image: url("assets/empty.png");
+}
+
+.cell.red
+{
+    background-image: url("assets/red.png");
+}
+
+.cell.red:hover {
+    filter: drop-shadow(0 0 0.5rem crimson);
+  }
+
+#result_dialog
+{
+    background: none;
+    border: none;
+    color: var(--sidebar-colour);
+    filter: drop-shadow(4px 4px 2px black);
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#result_dialog::backdrop
+{
+    backdrop-filter: blur(2px);
+}
+
+#result_dialog h2
+{
+    color: #345e75;
+    font-family: "MANIFESTO";
+    font-size: 100pt;
+    margin: 0;
+    margin-top: 170px;
+}
+
+#final_score
+{
+    font-size: 25pt;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* .cell:hover {
+    filter: hue-rotate(180deg);
+  } */

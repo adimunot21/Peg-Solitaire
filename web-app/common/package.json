@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "computing-2-submission": "file:../..",
+    "prompt-sync": "^4.2.0",
+    "ramda": "^0.28.0"
+  }
+}
