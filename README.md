@@ -1,7 +1,4 @@
 Peg Solitaire.
-**CID**: 02150093
-
-The game that I decided to make for the Computing 2 Coursework is Peg Solitaire.
 
 It is a game involving empty holes and pegs. 
 
